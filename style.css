@@ -1,0 +1,117 @@
+
+
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 50%;
+  transform: translate(-10%, 50%);
+  justify-content: flex-end;
+}
+
+#lorem{
+  min-width: 20%;
+  margin: 0 10px;
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 5px;
+}
+
+#lorem h3{
+  margin: 0;
+}
+
+#first-row{
+  height: 142px;
+  width: 100%;
+  margin: 0 0 5px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+#second-row {
+  height: 142px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+#buttons{
+  width: 100px;
+  z-index: 1;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+#buttons button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  border: solid 1px #134880;
+  margin: 5px;
+  border-radius: 5px;
+  background: white;
+}
+
+#buttons img {
+  position: absolute;
+  margin: 0!important;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  width: 9px;
+  height: 14px!important;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#first-row img, #second-row img{
+  margin:0 5px;
+}
+
+#images {
+  position: absolute;
+  z-index: 0;
+  height: 142px;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+
+#images.left {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#first-row #images-holder {
+  position: relative;
+  width: 767.5px;
+  overflow: hidden;
+}
+
+#second-row #images-holder {
+  position: relative;
+  width: 525px;
+}
+
+#images img{
+  height: calc(100% - 2px);
+  position: relative;
+}
