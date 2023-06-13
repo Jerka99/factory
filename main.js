@@ -9,12 +9,13 @@ $(document).ready(function() {
   let rightArrow = $("#second-row #buttons button:last");
 
 
-  Object.keys(images).forEach((el, index)=>{ if(index < 5){
-                                         return $("#first-row #images-holder #images").append(`<img src=${el} alt="">`)
-                                        }
-                                      else {
-                                        return $("#second-row #images-holder #images").append(`<img src=${el} alt="">`)
-                                    }})
+  Object.keys(images).forEach((el, index)=>{ 
+    if(index < 5){
+            return $("#first-row #images-holder #images").append(`<img src=${el} alt="">`)
+          }
+        else {
+          return $("#second-row #images-holder #images").append(`<img src=${el} alt="">`)
+      }})
 
 const turnOffButtons = () =>{
   leftArrow.off();
