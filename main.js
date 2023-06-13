@@ -8,6 +8,10 @@ $(document).ready(function() {
   let leftArrow = $("#second-row #buttons button:first");
   let rightArrow = $("#second-row #buttons button:last");
 
+  const obj = {
+    El1:"#first-row",
+    El2:"#second-row"
+  }
 
   Object.keys(images).forEach((el, index)=>{ 
     if(index < 5){
@@ -21,57 +25,51 @@ const turnOffButtons = () =>{
   leftArrow.off();
   rightArrow.off();
     setTimeout(() => {
-      leftArrow.on("click",leftScroll);
-      rightArrow.on("click", rightScroll)
-    }, 370); 
+      leftArrow.on("click",left);
+      rightArrow.on("click", right)
+    }, 300); 
 }
 
- const rightScroll = () =>{
-  $("#second-row #images, #first-row #images ").removeClass("left")
-  
-    const lastEl1 = $("#first-row #images img").last();
-    const lastEl2 = $("#second-row #images img").last();
 
-    turnOffButtons();
-    lastEl1.clone().prependTo("#first-row #images");
-    lastEl2.clone().prependTo("#second-row #images");
+ const rightScroll = (x) =>{
 
-    $("#first-row #images ").animate({right:-lastEl1.width()-10},300, function() {
-      lastEl1.remove();
-      $(this).attr('style','right: 0px');
-    });
+  $(`${obj[x]} #images`).removeClass("left")
+  const El = $(`${obj[x]} #images img`).last();
 
-    $("#second-row #images ").animate({right:-lastEl2.width()-10},300, function() {
-      lastEl2.remove();
+   El.clone().prependTo(`${obj[x]} #images`);
+
+    $(`${obj[x]} #images`).animate({right: -El.width() - 10},250, function() {
+      El.remove();
       $(this).attr('style','right: 0px');
     });
   }
 
-  const leftScroll = () =>{
-    $("#second-row #images, #first-row #images ").addClass("left")
-    const firstEl1 = $("#first-row #images img").first();
-    const firstEl2 = $("#second-row #images img").first();
+  const leftScroll = (x) =>{
+    $(`${obj[x]} #images`).addClass("left")
+    const El = $(`${obj[x]} #images img`).first();
 
-    turnOffButtons();
-    firstEl1.clone().appendTo("#first-row #images");
-    firstEl2.clone().appendTo("#second-row #images");
+    El.clone().appendTo(`${obj[x]} #images`);
 
-    $("#first-row #images ").animate({right: firstEl1.width() + 10},300, function() {
-      firstEl1.remove();
-      $(this).attr('style','right: 0px');
-    });
-
-    $("#second-row #images ").animate({right: firstEl2.width() + 10},300, function() {
-      firstEl2.remove();
+    $(`${obj[x]} #images`).animate({right: El.width() + 10},250, function() {
+      El.remove();
       $(this).attr('style','right: 0px');
     });
   }
 
-  rightArrow.on("click", rightScroll)
-  leftArrow.on("click", leftScroll)
+  const right = () =>{
+    turnOffButtons();
+    rightScroll("El1");
+    rightScroll("El2")
+  }
+
+  const left = () =>{
+    turnOffButtons();
+    leftScroll("El1");
+    leftScroll("El2")
+  }
+
+  rightArrow.on("click",right)
+  leftArrow.on("click",left)
  
-
-
-
 });
 
