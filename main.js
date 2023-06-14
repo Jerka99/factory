@@ -8,6 +8,29 @@ $(document).ready(function() {
   let leftArrow = $("#second-row #buttons button:first");
   let rightArrow = $("#second-row #buttons button:last");
 
+
+  // function handlerIn(){
+
+  //   const arrow = $(this).children().attr("src").substring(20,21);    
+  //   if(arrow == "l")
+  //   $(this).children().attr("src","./assets/arrow-gray-left.png")
+  //   else
+  //   $(this).children().attr("src","./assets/arrow-gray-right.png")
+
+  // }
+
+  // function handlerOut(){
+  //   const arrow = $(this).children().attr("src").substring(20,21);
+  //   if(arrow == "l")
+  //   $(this).children().attr("src","./assets/arrow-blue-left.png")
+  //   else
+  //   $(this).children().attr("src","./assets/arrow-blue-right.png")
+
+  // }
+  // leftArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
+  // rightArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
+
+
   const obj = {
     El1:"#first-row",
     El2:"#second-row"
@@ -59,13 +82,13 @@ const turnOffButtons = () =>{
   const right = () =>{
     turnOffButtons();
     rightScroll("El1");
-    rightScroll("El2")
+    rightScroll("El2");
   }
 
   const left = () =>{
     turnOffButtons();
     leftScroll("El1");
-    leftScroll("El2")
+    leftScroll("El2");
   }
 
   rightArrow.on("click",right)
