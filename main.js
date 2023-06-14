@@ -9,26 +9,26 @@ $(document).ready(function() {
   let rightArrow = $("#second-row #buttons button:last");
 
 
-  // function handlerIn(){
+  function handlerIn(){
+    console.log("defe")
+    // const arrow = $(this).children().attr("src").substring(20,21);    
+    // if(arrow == "l")
+    // $(this).children().attr("src","./assets/arrow-gray-left.png")
+    // else
+    // $(this).children().attr("src","./assets/arrow-gray-right.png")
 
-  //   const arrow = $(this).children().attr("src").substring(20,21);    
-  //   if(arrow == "l")
-  //   $(this).children().attr("src","./assets/arrow-gray-left.png")
-  //   else
-  //   $(this).children().attr("src","./assets/arrow-gray-right.png")
+  }
 
-  // }
+  function handlerOut(){
+    const arrow = $(this).children().attr("src").substring(20,21);
+    if(arrow == "l")
+    $(this).children().attr("src","./assets/arrow-blue-left.png")
+    else
+    $(this).children().attr("src","./assets/arrow-blue-right.png")
 
-  // function handlerOut(){
-  //   const arrow = $(this).children().attr("src").substring(20,21);
-  //   if(arrow == "l")
-  //   $(this).children().attr("src","./assets/arrow-blue-left.png")
-  //   else
-  //   $(this).children().attr("src","./assets/arrow-blue-right.png")
-
-  // }
-  // leftArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
-  // rightArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
+  }
+  leftArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
+  rightArrow.on( "mouseenter", handlerIn ).on( "mouseleave", handlerOut );
 
 
   const obj = {

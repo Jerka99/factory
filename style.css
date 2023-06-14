@@ -111,13 +111,13 @@ section {
 
 #first-row #images-holder {
   position: relative;
-  width: 767.5px;
+  width: 777.5px;
   overflow: hidden;
 }
 
 #second-row #images-holder {
   position: relative;
-  width: 525px;
+  width: 530px;
 }
 
 #images img{
