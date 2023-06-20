@@ -1,0 +1,135 @@
+#buttons {
+  width: 100px;
+  z-index: 1;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+#buttons button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  border: solid 1px #134880;
+  margin: 5px;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+#buttons button:hover {
+  border: 1px solid darkgray;
+}
+#buttons :nth-child(1):hover::after {
+  content: url(../assets/arrow-gray-left.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons :nth-child(1)::after {
+  content: url(../assets/arrow-blue-left.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons :nth-child(2):hover::after {
+  content: url(../assets/arrow-gray-right.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons :nth-child(2)::after {
+  content: url(../assets/arrow-blue-right.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto min-content auto;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  justify-content: flex-end;
+  height: 290px;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+}
+
+#lorem {
+  min-width: 240px;
+  width: 240px;
+  margin: 0 10px;
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 5px;
+}
+#lorem h2 {
+  color: #134880;
+  margin: 0;
+}
+
+#first-row, #second-row {
+  display: flex;
+  justify-content: flex-end;
+  height: 142px;
+  width: 100%;
+  margin: 0 0 5px 0;
+}
+#first-row img, #second-row img {
+  margin: 0 5px;
+}
+
+#images {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 0;
+  height: 142px;
+  right: 0;
+}
+#images.left {
+  justify-content: flex-start;
+  width: 100%;
+}
+#images img {
+  height: calc(100% - 2px);
+  position: relative;
+}
+
+#images-holder, #second-row #images-holder {
+  position: relative;
+  width: 777.5px;
+  overflow: hidden;
+}
+
+#second-row #images-holder {
+  width: 530px;
+}/*# sourceMappingURL=style.css.map */
