@@ -1,30 +1,26 @@
 $blu: #134880;
 
-@import './buttons';
+@import "./buttons";
 
-@mixin flex($cond){
+@mixin flex($cond) {
   display: flex;
-  @if($cond){
-  justify-content: flex-end;
-}
-  @else{
+  @if ($cond) {
+    justify-content: flex-end;
+  } @else {
     align-items: center;
   }
 }
 
-
-body{
+body {
   margin: 0;
   display: grid;
   grid-template-rows: auto min-content auto;
   height: 100vh;
 }
 
-
 * {
   box-sizing: border-box;
 }
-
 
 section {
   @include flex(true);
@@ -34,7 +30,6 @@ section {
   overflow: hidden;
 }
 
-
 #lorem {
   min-width: 240px;
   width: 240px;
@@ -43,46 +38,45 @@ section {
   z-index: 2;
   background: white;
   padding: 5px;
-  h2{
+  h2 {
     color: $blu;
     margin: 0;
   }
 }
 
-
-#first-row, #second-row{
+#first-row,
+#second-row {
   @include flex(true);
   height: 142px;
   width: 100%;
   margin: 0 0 5px 0;
-  img{
-    margin:0 5px;
+  img {
+    margin: 0 5px;
   }
 }
 
-#images {
+.images {
   @include flex(false);
   position: absolute;
   z-index: 0;
   height: 142px;
   right: 0;
-  &.left{
+  &.left {
     justify-content: flex-start;
     width: 100%;
   }
-  img{
+  img {
     height: calc(100% - 2px);
     position: relative;
   }
 }
- #images-holder {
+.images-holder {
   position: relative;
   width: 777.5px;
   overflow: hidden;
 }
 
-#second-row #images-holder {
-  @extend #images-holder;
+#second-row .images-holder {
+  @extend .images-holder;
   width: 530px;
 }
-
