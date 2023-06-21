@@ -1,5 +1,4 @@
 $(function () {
-
   let leftArrow = $("#left-arrow");
   let rightArrow = $("#right-arrow");
 
@@ -19,15 +18,15 @@ $(function () {
 
   const rightScroll = (x) => {
     $(`${obj[x]} .images`).removeClass("left");
-    const El = $(`${obj[x]} .images img`).last();
+    const lastImg = $(`${obj[x]} .images img`).last();
 
-    El.clone().prependTo(`${obj[x]} .images`);
+    lastImg.clone().prependTo(`${obj[x]} .images`);
 
     $(`${obj[x]} .images`).animate(
-      { right: -El.width() - 10 },
+      { right: -lastImg.width() - 10 },
       240,
       function () {
-        El.remove();
+        lastImg.remove();
         $(this).attr("style", "right: 0px");
       }
     );
@@ -35,13 +34,13 @@ $(function () {
 
   const leftScroll = (x) => {
     $(`${obj[x]} .images`).addClass("left");
-    const El = $($(`${obj[x]} .images img`)).first();
-    El.clone().appendTo($(`${obj[x]} .images`));
+    const firstImg = $($(`${obj[x]} .images img`)).first();
+    firstImg.clone().appendTo($(`${obj[x]} .images`));
     $(`${obj[x]} .images`).animate(
-      { right: El.width() + 10 },
+      { right: firstImg.width() + 10 },
       240,
       function () {
-        El.remove();
+        firstImg.remove();
         $(this).attr("style", "right: 0px");
       }
     );

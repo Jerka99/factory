@@ -1,0 +1,17 @@
+$blu: #134880;
+$gray: #dddddd;
+
+@mixin flex($cond) {
+    display: flex;
+    @if ($cond) {
+      justify-content: flex-end;
+    } @else {
+      align-items: center;
+    }
+  }
+
+@mixin pseudo{
+    width: 100%;
+    height: 100px;
+    background: #dddddd;
+}

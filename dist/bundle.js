@@ -1,9 +1,8 @@
 /******/ (() => { // webpackBootstrap
 var __webpack_exports__ = {};
 $(function () {
-  console.log("ready!");
-  var leftArrow = $("#second-row #buttons button:first");
-  var rightArrow = $("#second-row #buttons button:last");
+  var leftArrow = $("#left-arrow");
+  var rightArrow = $("#right-arrow");
   var obj = {
     El1: "#first-row",
     El2: "#second-row"
@@ -17,25 +16,25 @@ $(function () {
     }, 250);
   };
   var rightScroll = function rightScroll(x) {
-    $("".concat(obj[x], " #images")).removeClass("left");
-    var El = $("".concat(obj[x], " #images img")).last();
-    El.clone().prependTo("".concat(obj[x], " #images"));
-    $("".concat(obj[x], " #images")).animate({
-      right: -El.width() - 10
+    $("".concat(obj[x], " .images")).removeClass("left");
+    var lastImg = $("".concat(obj[x], " .images img")).last();
+    lastImg.clone().prependTo("".concat(obj[x], " .images"));
+    $("".concat(obj[x], " .images")).animate({
+      right: -lastImg.width() - 10
     }, 240, function () {
-      El.remove();
-      $(this).attr('style', 'right: 0px');
+      lastImg.remove();
+      $(this).attr("style", "right: 0px");
     });
   };
   var leftScroll = function leftScroll(x) {
-    $("".concat(obj[x], " #images")).addClass("left");
-    var El = $("".concat(obj[x], " #images img")).first();
-    El.clone().appendTo("".concat(obj[x], " #images"));
-    $("".concat(obj[x], " #images")).animate({
-      right: El.width() + 10
+    $("".concat(obj[x], " .images")).addClass("left");
+    var firstImg = $($("".concat(obj[x], " .images img"))).first();
+    firstImg.clone().appendTo($("".concat(obj[x], " .images")));
+    $("".concat(obj[x], " .images")).animate({
+      right: firstImg.width() + 10
     }, 240, function () {
-      El.remove();
-      $(this).attr('style', 'right: 0px');
+      firstImg.remove();
+      $(this).attr("style", "right: 0px");
     });
   };
   var right = function right() {
