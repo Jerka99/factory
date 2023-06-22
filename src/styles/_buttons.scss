@@ -1,47 +1,46 @@
+@mixin arrows($img) {
+  content: $img;
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
 
-@mixin arrows($img){
-    content: $img;
-    position: absolute;
-    display: block;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    height: 16px;
-    transform: translate(-50%, -50%);
-  }
-
-#buttons{
-    width: 165px;
-    z-index: 1;
+#buttons {
+  width: 165px;
+  z-index: 1;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-end;
+  button {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    position: relative;
+    border: solid 1px darkgray;
+    margin: 0 5px 10px 0px;
+    border-radius: 5px;
     background: white;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: flex-end;
-    button {
-      width: 60px;
-      height: 60px;
-      padding: 0;
-      position: relative;
-      border: solid 1px darkgray;
-      margin: 0 5px 10px 0px;
-      border-radius: 5px;
-      background: white;
-      cursor: pointer;
-      &:hover{
-        border:1px solid $blu;
-      }
-      }
-      #left-arrow:hover::after{
-        @include arrows($img: url(../assets/arrow-blue-left.png));
-      }
-      #left-arrow::after{
-        @include arrows($img: url(../assets/arrow-gray-left.png));
-      }
-      #right-arrow:hover::after{
-        @include arrows($img: url(../assets/arrow-blue-right.png));
-      }
-      #right-arrow::after{
-        @include arrows($img: url(../assets/arrow-gray-right.png));
-      }
+    cursor: pointer;
+    &:hover {
+      border: 1px solid $blu;
+    }
   }
+  #left-arrow:hover::after {
+    @include arrows($img: url(../assets/arrow-blue-left.png));
+  }
+  #left-arrow::after {
+    @include arrows($img: url(../assets/arrow-gray-left.png));
+  }
+  #right-arrow:hover::after {
+    @include arrows($img: url(../assets/arrow-blue-right.png));
+  }
+  #right-arrow::after {
+    @include arrows($img: url(../assets/arrow-gray-right.png));
+  }
+}

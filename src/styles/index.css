@@ -1,67 +1,3 @@
-#buttons {
-  width: 165px;
-  z-index: 1;
-  background: white;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  align-items: flex-end;
-}
-#buttons button {
-  width: 60px;
-  height: 60px;
-  padding: 0;
-  position: relative;
-  border: solid 1px darkgray;
-  margin: 0 5px 10px 0px;
-  border-radius: 5px;
-  background: white;
-  cursor: pointer;
-}
-#buttons button:hover {
-  border: 1px solid #134880;
-}
-#buttons #left-arrow:hover::after {
-  content: url(../assets/arrow-blue-left.png);
-  position: absolute;
-  display: block;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  height: 16px;
-  transform: translate(-50%, -50%);
-}
-#buttons #left-arrow::after {
-  content: url(../assets/arrow-gray-left.png);
-  position: absolute;
-  display: block;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  height: 16px;
-  transform: translate(-50%, -50%);
-}
-#buttons #right-arrow:hover::after {
-  content: url(../assets/arrow-blue-right.png);
-  position: absolute;
-  display: block;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  height: 16px;
-  transform: translate(-50%, -50%);
-}
-#buttons #right-arrow::after {
-  content: url(../assets/arrow-gray-right.png);
-  position: absolute;
-  display: block;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  height: 16px;
-  transform: translate(-50%, -50%);
-}
-
 * {
   box-sizing: border-box;
 }
@@ -142,7 +78,7 @@ footer::after {
 #second-row {
   display: flex;
   justify-content: flex-end;
-  height: 202px;
+  height: 200px;
   width: 100%;
   margin: 0 0 10px 0;
 }
@@ -157,7 +93,7 @@ footer::after {
   align-items: center;
   position: absolute;
   z-index: 0;
-  height: 202px;
+  height: 200px;
   right: 0;
 }
 .images.left {
@@ -165,7 +101,7 @@ footer::after {
   width: 100%;
 }
 .images img {
-  height: calc(100% - 2px);
+  height: 200px;
   position: relative;
 }
 
@@ -185,4 +121,67 @@ footer::after {
     right: 10px;
     justify-items: end;
   }
+}
+#buttons {
+  width: 165px;
+  z-index: 1;
+  background: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#buttons button {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  position: relative;
+  border: solid 1px darkgray;
+  margin: 0 5px 10px 0px;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+}
+#buttons button:hover {
+  border: 1px solid #134880;
+}
+#buttons #left-arrow:hover::after {
+  content: url(../assets/arrow-blue-left.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons #left-arrow::after {
+  content: url(../assets/arrow-gray-left.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons #right-arrow:hover::after {
+  content: url(../assets/arrow-blue-right.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+#buttons #right-arrow::after {
+  content: url(../assets/arrow-gray-right.png);
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  height: 16px;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=index.css.map */
